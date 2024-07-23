@@ -5,7 +5,7 @@ const list = document.querySelector("#msg-list")
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (input.value != "") {
-        const message = input.value;
+        const message = input.value.trim();
         const newLI = document.createElement("li")
         newLI.innerText = message
         list.append(newLI);
@@ -14,6 +14,5 @@ form.addEventListener("submit", function (e) {
 })
 
 form.addEventListener("reset", function (e) {
-    console.log(e)
     list.innerHTML = ""
 })
